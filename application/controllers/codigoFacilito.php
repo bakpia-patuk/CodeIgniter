@@ -4,7 +4,7 @@ class CodigoFacilito extends CI_Controller {
 	function __construct(){
 		parent:: __construct();
 	}
-	
+	#mhgvhg
 	function index(){
 		$this->load->library('menu',array('Inicio','Contacto','Cursos'));
 		$data['mi_menu'] = $this->menu->construirMenu();
