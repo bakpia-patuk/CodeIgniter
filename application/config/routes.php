@@ -38,8 +38,20 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "principal";
 $route['404_override'] = '';
+
+$route['Inicio'] = "principal";
+$route['El%20Hotel'] = "principal/elHotel";
+$route['Situacion'] = "principal/situacion";
+$route['Agenda%20Bilbao'] = "principal/agenda";
+$route['Contacto'] = "principal/contacto";
+$route['Opiniones'] = "principal/opiniones";
+$route['Galeria'] = "principal/galeria";
+$route['Habitaciones'] = "principal/habitaciones";
+$route['Salones'] = "principal/salones";
+$route['Servicios%20Comunes'] = "principal/servicios";
+$route['Restaurante'] = "principal/restaurante";
 
 
 /* End of file routes.php */

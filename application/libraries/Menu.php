@@ -12,18 +12,18 @@
 			$ret_menu = "<nav><ul id='jMenu'>";
 			foreach ($this->arr_menu as $opcion) {
 				if($this->cont==1){
-					$ret_menu .= "<li><a>".$opcion."</a>";
+					$ret_menu .= "<li><a href='".$opcion."'>".$opcion."</a>";
 				}
 				else if($this->cont==2){
 					$ret_menu.="<ul>";
 					foreach ($this->arr_menu[$this->cont] as $opcion2) {
-						$ret_menu .= "<li><a>".$opcion2."</a></li>";
+						$ret_menu .= "<li><a href='".$opcion2."'>".$opcion2."</a></li>";
 						$this->i++;
 					}
 					$ret_menu.="</ul></li>";
 				}
 				else{
-					$ret_menu .= "<li><a>".$opcion."</a></li>";
+					$ret_menu .= "<li><a href='".$opcion."'>".$opcion."</a></li>";
 				}
 				
 				$this->cont++;

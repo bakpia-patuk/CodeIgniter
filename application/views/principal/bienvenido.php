@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Bienvenido</title>
+	<title>Hotel la Pepa</title>
 	<meta charset="utf-8">
 </head>
 <body>
-	<h1>Llamada desde el controlador código facillito.</h1>
+	<h1>Bienvenido</h1>
 	<?php 
 	echo $mi_menu;
 	?>
