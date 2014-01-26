@@ -6,85 +6,114 @@ class principal extends CI_Controller {
 		parent:: __construct();
 	}
 	function index(){
-		$arr1 = array('Galeria','Habitaciones','Salones','Servicios Comunes','Restaurante');
-		$arr2 = array('Inicio','El Hotel', $arr1 ,'Situacion','Agenda Bilbao','Contacto','Opiniones');
-		$arr3 = array('galeria','habitaciones','salones','servicios','restaurante');
-		$arr4 = array('bienvenido','elHotel', $arr3 ,'situacion','agenda','contacto','opiniones');
-		$arr1 = array($arr2,$arr4);
-		$this->load->library('menu',$arr2);
+		$arr2 = array('Galeria','Habitaciones','Salones','Servicios comunes','Restaurante');
+		$this->load->library('menu',array('Inicio','El Hotel', $arr2 ,'Situacion','Agenda Bilbao','Contacto','Opiniones'));
 		$data['mi_menu'] = $this->menu->construirMenu();
-		$this->load->view('principal/headers');	
-		$this->load->view('principal/bienvenido',$data); 	
+		$this->load->view('principal/headers');
+		$this->load->view('principal/head');
+		$this->load->view('principal/menu',$data);		
+		$this->load->view('principal/bienvenido'); 	
+		$this->load->view('principal/footer'); 	
 	}
 	function elHotel(){
-		$arr2 = array('Galeria','Habitaciones','Salones','Servicios Comunes','Restaurante');
+		$arr2 = array('Galeria','Habitaciones','Salones','Servicios comunes','Restaurante');
 		$this->load->library('menu',array('Inicio','El Hotel', $arr2 ,'Situacion','Agenda Bilbao','Contacto','Opiniones'));
 		$data['mi_menu'] = $this->menu->construirMenu();
 		$this->load->view('principal/headers');	
-		$this->load->view('principal/elHotel',$data);	
+		$this->load->view('principal/head');
+		$this->load->view('principal/menu',$data);	
+		$this->load->view('principal/elHotel');	
+		$this->load->view('principal/footer'); 	
 	}
 	function situacion(){
-		$arr2 = array('Galeria','Habitaciones','Salones','Servicios Comunes','Restaurante');
+		$arr2 = array('Galeria','Habitaciones','Salones','Servicios comunes','Restaurante');
 		$this->load->library('menu',array('Inicio','El Hotel', $arr2 ,'Situacion','Agenda Bilbao','Contacto','Opiniones'));
 		$data['mi_menu'] = $this->menu->construirMenu();
-		$this->load->view('principal/headers');	
-		$this->load->view('principal/situacion',$data);	
+		$this->load->view('principal/headers');
+		$this->load->view('principal/head');
+		$this->load->view('principal/menu',$data);		
+		$this->load->view('principal/situacion');	
+		$this->load->view('principal/footer'); 	
 	}
 	function agenda(){
-		$arr2 = array('Galeria','Habitaciones','Salones','Servicios Comunes','Restaurante');
+		$arr2 = array('Galeria','Habitaciones','Salones','Servicios comunes','Restaurante');
 		$this->load->library('menu',array('Inicio','El Hotel', $arr2 ,'Situacion','Agenda Bilbao','Contacto','Opiniones'));
 		$data['mi_menu'] = $this->menu->construirMenu();
-		$this->load->view('principal/headers');	
-		$this->load->view('principal/agenda',$data);	
+		$this->load->view('principal/headers');
+		$this->load->view('principal/head');
+		$this->load->view('principal/menu',$data);		
+		$this->load->view('principal/agenda');	
+		$this->load->view('principal/footer'); 	
 	}
 	function contacto(){
-		$arr2 = array('Galeria','Habitaciones','Salones','Servicios Comunes','Restaurante');
+		$arr2 = array('Galeria','Habitaciones','Salones','Servicios comunes','Restaurante');
 		$this->load->library('menu',array('Inicio','El Hotel', $arr2 ,'Situacion','Agenda Bilbao','Contacto','Opiniones'));
 		$data['mi_menu'] = $this->menu->construirMenu();
 		$this->load->view('principal/headers');	
-		$this->load->view('principal/contacto',$data);	
+		$this->load->view('principal/head');
+		$this->load->view('principal/menu',$data);	
+		$this->load->view('principal/contacto');	
+		$this->load->view('principal/footer'); 	
 	}
 	function opiniones(){
-		$arr2 = array('Galeria','Habitaciones','Salones','Servicios Comunes','Restaurante');
+		$arr2 = array('Galeria','Habitaciones','Salones','Servicios comunes','Restaurante');
 		$this->load->library('menu',array('Inicio','El Hotel', $arr2 ,'Situacion','Agenda Bilbao','Contacto','Opiniones'));
 		$data['mi_menu'] = $this->menu->construirMenu();
-		$this->load->view('principal/headers');	
-		$this->load->view('principal/opiniones',$data);	
+		$this->load->view('principal/headers');
+		$this->load->view('principal/head');
+		$this->load->view('principal/menu',$data);		
+		$this->load->view('principal/opiniones');	
+		$this->load->view('principal/footer'); 	
 	}
 	function galeria(){
-		$arr2 = array('Galeria','Habitaciones','Salones','Servicios Comunes','Restaurante');
+		$arr2 = array('Galeria','Habitaciones','Salones','Servicios comunes','Restaurante');
 		$this->load->library('menu',array('Inicio','El Hotel', $arr2 ,'Situacion','Agenda Bilbao','Contacto','Opiniones'));
 		$data['mi_menu'] = $this->menu->construirMenu();
 		$this->load->view('principal/headers');	
-		$this->load->view('principal/galeria',$data);	
+		$this->load->view('principal/head');
+		$this->load->view('principal/menu',$data);	
+		$this->load->view('principal/galeria');	
+		$this->load->view('principal/footer'); 	
 	}
 	function habitaciones(){
-		$arr2 = array('Galeria','Habitaciones','Salones','Servicios Comunes','Restaurante');
+		$arr2 = array('Galeria','Habitaciones','Salones','Servicios comunes','Restaurante');
 		$this->load->library('menu',array('Inicio','El Hotel', $arr2 ,'Situacion','Agenda Bilbao','Contacto','Opiniones'));
 		$data['mi_menu'] = $this->menu->construirMenu();
-		$this->load->view('principal/headers');	
-		$this->load->view('principal/habitaciones',$data);	
+		$this->load->view('principal/headers');
+		$this->load->view('principal/head');
+		$this->load->view('principal/menu',$data);		
+		$this->load->view('principal/habitaciones');	
+		$this->load->view('principal/footer'); 	
 	}
 	function salones(){
-		$arr2 = array('Galeria','Habitaciones','Salones','Servicios Comunes','Restaurante');
+		$arr2 = array('Galeria','Habitaciones','Salones','Servicios comunes','Restaurante');
 		$this->load->library('menu',array('Inicio','El Hotel', $arr2 ,'Situacion','Agenda Bilbao','Contacto','Opiniones'));
 		$data['mi_menu'] = $this->menu->construirMenu();
-		$this->load->view('principal/headers');	
-		$this->load->view('principal/salones',$data);	
+		$this->load->view('principal/headers');
+		$this->load->view('principal/head');
+		$this->load->view('principal/menu',$data);		
+		$this->load->view('principal/salones');	
+		$this->load->view('principal/footer'); 	
 	}
 	function servicios(){
-		$arr2 = array('Galeria','Habitaciones','Salones','Servicios Comunes','Restaurante');
+		$arr2 = array('Galeria','Habitaciones','Salones','Servicios comunes','Restaurante');
 		$this->load->library('menu',array('Inicio','El Hotel', $arr2 ,'Situacion','Agenda Bilbao','Contacto','Opiniones'));
 		$data['mi_menu'] = $this->menu->construirMenu();
-		$this->load->view('principal/headers');	
-		$this->load->view('principal/servicios',$data);	
+		$this->load->view('principal/headers');
+		$this->load->view('principal/head');
+		$this->load->view('principal/menu',$data);		
+		$this->load->view('principal/servicios');	
+		$this->load->view('principal/footer'); 	
 	}
 	function restaurante(){
-		$arr2 = array('Galeria','Habitaciones','Salones','Servicios Comunes','Restaurante');
+		$arr2 = array('Galeria','Habitaciones','Salones','Servicios comunes','Restaurante');
 		$this->load->library('menu',array('Inicio','El Hotel', $arr2 ,'Situacion','Agenda Bilbao','Contacto','Opiniones'));
 		$data['mi_menu'] = $this->menu->construirMenu();
 		$this->load->view('principal/headers');	
-		$this->load->view('principal/restaurante',$data);	
+		$this->load->view('principal/head');
+		$this->load->view('principal/menu',$data);	
+		$this->load->view('principal/restaurante');	
+		$this->load->view('principal/footer'); 	
 	}
 }
 

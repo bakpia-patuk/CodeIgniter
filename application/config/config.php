@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://aperristreet.site11.com/CodeIgniter/';
+$config['base_url']	= 'http://aperristreet.site11.com/CodeIgniter';
 
 /*
 |--------------------------------------------------------------------------

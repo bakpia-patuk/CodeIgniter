@@ -3,7 +3,7 @@
 <head>
 	<title></title>
 	<meta charset="utf-8">
-	<link href="css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="<?php echo base_url(); ?>css/style.css" rel="stylesheet" type="text/css"/>
 
 	<link rel="stylesheet" href="<?php echo base_url(); ?>themes/default/default.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="<?php echo base_url(); ?>themes/light/light.css" type="text/css" media="screen" />

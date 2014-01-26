@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Hotel la Pepa</title>
-	<meta charset="utf-8">
-</head>
-<body>
-	<h1>Servicion Comunes</h1>
-	<?php 
-	echo $mi_menu;
-	?>
-</body>
-</html>
+<div id="contenido">
+	<h1>Servicios</h1>
+</div>

@@ -50,9 +50,9 @@ $route['Opiniones'] = "principal/opiniones";
 $route['Galeria'] = "principal/galeria";
 $route['Habitaciones'] = "principal/habitaciones";
 $route['Salones'] = "principal/salones";
-$route['Servicios%20Comunes'] = "principal/servicios";
+$route['Servicios%20comunes'] = "principal/servicios";
 $route['Restaurante'] = "principal/restaurante";
-
+$route['Install'] = "crearDB/CrearDB/crearDB";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
+$db['default']['hostname'] = 'mysql13.000webhost.com';
+$db['default']['username'] = 'a1211582_hotelAd';
+$db['default']['password'] = 'oBk-L74-Uq3-QEK';
+$db['default']['database'] = 'a1211582_hotel';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
