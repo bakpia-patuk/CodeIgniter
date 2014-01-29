@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .jMenu{
 	width: 100%;
 	text-align: center;
@@ -53,3 +54,61 @@
 .jMenu li ul li a:hover{
     background:rgb(233,227,221);
 }
+=======
+.jMenu{
+	width: 100%;
+	text-align: center;
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.jMenu li{
+	display:inline-block;
+	vertical-align: top;
+	width: 150px;
+	background-image: -moz-linear-gradient(#198F00 , #1D5200);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#198F00), to(#1D5200));
+	margin:0;
+}
+.jMenu li a{
+	padding:5px 15px;
+	display:block;
+	background-color:transparent;
+	color:white;
+	cursor:pointer;
+	font-size:12px;
+}
+.jMenu li a:hover{
+	background-color:#3a3a3a;
+}
+.jMenu li:hover>a{
+	background-color:#3a3a3a;
+}
+.jMenu li ul{
+	display:none;
+	padding:0;
+	margin:0;
+}
+.jMenu li ul li{
+	width: 150px;
+	background-image: -moz-linear-gradient(#198F00 , #1D5200);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#198F00), to(#1D5200));
+	display:block;
+	border-bottom:1px solid;
+}
+.jMenu li ul li a{
+	font-size:11px;
+	text-transform:none;
+	padding:7px;
+	border-top:1px solid transparent;
+	border-bottom:1px solid transparent;
+}
+.jMenu li ul li a.isParent{
+	background-color:#3a3a3a;
+}
+.jMenu li ul li a:hover{
+	background-color:#514c52;
+	border-top:1px solid #322f32;
+	border-bottom:1px solid #322f32;
+}
+>>>>>>> 5ffd4a828276a7817dc5def3723c788813fb6c62
