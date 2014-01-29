@@ -1,0 +1,534 @@
+/*--------------------------------
+
+		DISEÑO DEL INDEX
+
+------------------------------------*/
+
+*{
+
+    font-family: arial;
+
+    margin: 0;
+
+}
+
+body{
+    background: #ebebeb;
+}
+
+#fondo0{
+    position: absolute;
+    background:rgb(223,217,211);
+    width: 100%;
+    top:68px;
+    height:42px;
+    z-index: -1;
+}
+
+#fondo1{
+    position: absolute;
+    background:white; 
+    width: 100%;
+    top:110px;
+    height:577px;
+    z-index: -1;
+}
+#fondo2{
+    position: absolute;
+    background:rgb(223,217,211);
+    width: 100%;
+    top:687px;
+    height:28px;
+    z-index: -1;
+}
+
+#fondo3{
+    position: absolute;
+    background:rgb(223,217,211);
+    width: 100%;
+    top:1275px;
+    height:236px;
+    z-index: -1;
+}
+
+#web{
+
+    background-color: transparent;
+
+	width: 1300px;
+
+    height:2000px;
+
+    padding: 10px;
+
+	margin:0 auto;
+
+}
+
+#logos{
+
+	position:relative;
+
+}
+
+#logo1{
+    visibility: hidden;
+	float: left;
+
+}
+
+#login{
+    
+	position: relative;
+
+	text-align: center;
+
+	width: 250px;
+
+	height: 30px;
+
+	margin-left: 250;
+
+	background-color: rgb(102,136,0);
+
+	border-radius: 5px;
+
+	padding-top: 15px;
+
+	color:white;
+
+}
+
+#logo2{
+
+    visibility: hidden;
+
+	position:absolute;
+
+	float: right;
+
+	top: 0;
+
+	right: 0;
+
+    text-align: center;
+
+}
+
+#logo2 .inpt{
+
+    width:150px;
+
+}
+
+#logo2 .boton{
+
+    width:50px;
+
+}
+
+#mensajeLogin{
+
+    margin-right: 22%;
+
+    float: right;
+
+    width: auto;
+
+}
+
+
+
+#disponibilidad{
+
+    background: #ebebeb;
+
+	clear: both;
+
+    background:rgb(223,217,211);
+
+	height: 40px;
+
+    padding-bottom:2px;
+
+
+
+}
+
+#disponibilidad label{
+
+	line-height: 40px;
+
+	padding: 1%;
+
+	font-family: arial;
+
+}
+
+.disponibilidad{
+
+    background-color: lightgrey;
+
+    margin-left: 5%;
+
+    height: 70%;
+
+    font-size: 1em;
+
+    border-radius: 5px;
+
+    outline: none;
+
+}
+
+
+
+#logo3 img{
+
+	width: 100%;
+
+}
+
+nav{
+
+    height:26px;
+
+}
+
+nav a{
+
+    text-decoration: none;
+
+}
+
+
+
+.titular{
+
+	text-align: center;
+
+	font-family: arial;
+
+	font-weight: bold;
+
+	font-size: 1em;
+
+	background-color: lightgrey;
+
+}
+
+.contenidoTabla{
+
+	text-align: center;
+
+	font-weight: bold;
+
+}
+
+.desplegableHab{
+
+	border:0;
+
+}
+
+.formularioCliente{
+
+	margin:0 auto;
+
+	width:50%;
+
+	text-align: center;
+
+}
+
+#wrapper{
+
+	width:30%;
+
+	margin:0 auto;
+
+	text-align: center;
+
+}
+
+#contenido{
+
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+.columna_derecha {
+
+    float:right; /* Alineación a la derecha */
+
+    width:20%;
+
+    padding:10px;
+
+}
+
+.columna_derecha h2{
+
+    text-align: center;
+
+}
+
+.columna_izquierda {
+
+    float:left; /* Alineación a la izquierda */
+
+    width:20%;
+
+    padding:10px;
+
+}
+
+.columna_izquierda h2{
+
+    text-align: center;
+
+}
+
+.columna_central {
+
+    margin-left:25%; /* Espacio para la columna izquierda */
+
+    margin-right:25%; /* Espacio para la columna derecha */
+
+    padding:10px;
+
+}
+
+.columna_central h2{
+
+    text-align: center;
+
+}
+
+
+
+
+
+/*--------------------------------
+
+			FORMULARIO
+
+------------------------------------*/
+
+
+
+/*BORDE EXTERIOR QUE DELIMITA EL FORMULARIO*/
+
+fieldset{
+
+	width:355px;
+
+}
+
+/*TITULO*/
+
+.contact_form h2 {
+
+    background: none repeat scroll 0 0 #F3F3F3;
+
+    border-radius: 5px;
+
+    color: #5CD053;
+
+    display: block;
+
+    font-family: sans-serif;
+
+    font-size: 20px;
+
+    padding: 5px;
+
+    text-align: center;
+
+    text-shadow: 1px 1px 1px #CCCCCC;
+
+    width: 325px;
+
+}
+
+/*RAYA HORIZONTAL QUE LIMITA CADA ELEMENTO DE LA LISTA*/
+
+.contact_form ul {
+
+    width:350px;
+
+    list-style-type:none;
+
+    margin:0px;
+
+    padding:0px;
+
+}
+
+.contact_form li{
+
+    padding:12px;
+
+    border-bottom:1px solid #eee;
+
+    position:relative;
+
+}
+
+
+
+/*TEXTO DE CADA CAMPO*/
+
+.contact_form label {
+
+    color: #555555;
+
+    display: inline-block;
+
+    float: left;
+
+    font-family: sans-serif;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-top: 3px;
+
+    padding: 3px;
+
+    width: 90px;
+
+}
+
+/*INPUT PARA RELLENAR DATOS*/
+
+.contact_form input {
+
+    height:20px;
+
+    width:220px;
+
+    padding:5px 8px;
+
+    border:1px solid #aaa;
+
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+
+    border-radius:2px;
+
+    color: #888;
+
+    font-size: 12px;
+
+    padding-right:30px;
+
+    -moz-transition: padding .25s;
+
+    -webkit-transition: padding .25s;
+
+    -o-transition: padding .25s;
+
+    transition: padding .25s;
+
+}
+
+/*BOTON DE ENVIAR*/
+
+button.submit {
+
+   width:80px;
+
+   padding: 9px 17px;
+
+   font-family: Helvetica, Arial, sans-serif;
+
+   font-weight: bold;
+
+   line-height: 1;
+
+   color: #444;
+
+   border: none;
+
+   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85);
+
+   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#bbb));
+
+   background-image: -moz-linear-gradient(0% 100% 90deg, #BBBBBB, #FFFFFF);
+
+   background-color: #fff;
+
+   border: 1px solid #f1f1f1;
+
+   border-radius: 10px;
+
+   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+
+}
+
+button.submit:hover {
+
+    opacity:.55;
+
+    cursor: pointer;
+
+    color: #fff;
+
+}
+
+button.submit:active {
+
+    border: 1px solid #222;
+
+    box-shadow: 0 0 10px 5px #444 inset;
+
+}
+
+/*PICHAR SOBRE LOS INPUT*/
+
+.contact_form input:focus{
+
+    background: #fff;
+
+    border:1px solid #555;
+
+    box-shadow: 0 0 3px #aaa;
+
+    padding-right:80px;
+
+}
+
+/*ESTILOS PARA LA VALIDACION DE LOS INPUT */
+
+.contact_form input:required:valid{
+
+    box-shadow: 0 0 5px #5cd053;
+
+    border-color: #28921f;
+
+}
+
+.contact_form input:focus:invalid{
+
+    box-shadow: 0 0 5px #d45252;
+
+    border-color: #b03535
+
+}
+
+
+
+#botonFormulario{
+
+	margin-top: 5px;
+
+	text-align: center;
+
+}
+
+
+
+
+
