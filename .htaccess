@@ -1,12 +1,43 @@
-Options FollowSymLinks
-<ifModule mod_rewrite.c>
-	RewriteEngine on
+<IfModule mod_rewrite.c>
 
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteRule ^(.*)$ index.php?/$1 [L]
-</ifModule>
+    RewriteEngine on
 
-<ifModule !mod_rewrite.c>
-	ErrorDocument 404 /index.php
-</ifModule>
+    RewriteCond %{REQUEST_FILENAME} !-f
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    RewriteCond $1 !^(CodeIgniter/index\.php|images|js|css|img|robots\.txt)
+
+    RewriteRule ^(.*)$ CodeIgniter/index.php?/$1 [L]
+
+</IfModule>
+
+
+
+<IfModule !mod_rewrite.c>
+
+    ErrorDocument 404 /index.php
+
+</IfModule>
+
+
+
+<Ifmodule mod_expires.c>
+
+  #activa la generacion de cabecera Expires
+
+  ExpiresActive On
+
+  #establece el tiempo de cache por defecto
+
+  ExpiresDefault A1
+
+  <filesmatch ".(jpg|gif|png|css|ico|js)$">
+
+     #suma 1 semana a la hora de acceso del usuario
+
+     ExpiresDefault "access plus 1 week"
+
+  </filesmatch>
+
+</Ifmodule>

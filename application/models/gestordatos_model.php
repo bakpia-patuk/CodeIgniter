@@ -26,13 +26,125 @@ class Gestordatos_model extends CI_Model {
 	  									 or ("'.$fecha.'" > r.fecha_entrada and "'.$fecha.'" < r.fecha_salida))
 							GROUP BY th.cod_tipo,th.nombre,th.descripcion
 							HAVING count(*)>'.$habitaciones;
-
+ 
 
 		$hab_disponibles=$this->db->query($sql);
 		$hab_disponibles = $hab_disponibles->result_array();
 		
 		return $hab_disponibles;
 	}
+	function habDisponibles(){
+
+		$nuevafecha=$this->session->userdata('fecha_entrada');
+		$fechaelegida=$this->session->userdata('fecha_salida');
+
+		$sql='select th.cod_tipo,h.num_hab
+			from habitacion h join tipoHabitacion th on h.cod_tipo=th.cod_tipo
+			where num_hab not in(select h.num_hab 
+								from habitacion h join reserva r on r.num_hab=h.num_hab 
+								where ("'.$fechaelegida.'" <= r.fecha_entrada and "'.$nuevafecha.'" > r.fecha_entrada) 
+								or ("'.$fechaelegida.'" > r.fecha_entrada and "'.$fechaelegida.'" < r.fecha_salida))';
+
+
+		$hab_disponibles=$this->db->query($sql);
+		$hab_disponibles = $hab_disponibles->result_array();
+
+		return $hab_disponibles;
+	}
+
+
+	function servicios(){
+
+		$this->db->flush_cache();
+		$query = $this->db->get('servicio');
+		$query = $query->result_array();
+
+		return $query;
+	}
+
+	function serviciosTabla($cod_servicio){
+
+		$this->db->flush_cache();
+		$servicio=$this->db->query('select tabla from servicio where cod_servicio = ' . $cod_servicio );
+
+		return $servicio->row('tabla');
+	}
+
+	function servicioPista($tabla){
+
+		$this->db->flush_cache();
+		$servicio=$this->db->query('select * from '.$tabla);
+		return $servicio->result_array();
+
+	}
+	function datosPista($cod){
+
+		$this->db->flush_cache();
+		$pista=$this->db->query('select * from pista where cod_pista='.$cod);
+		return $pista->result_array();
+
+	}
+
+	function servicioRestaurante($tabla){
+
+		$this->db->flush_cache();
+		$servicio=$this->db->query('select * from '.$tabla);
+		return $servicio->result_array();
+
+	}
+	function datosRestaurante($cod){
+
+		$this->db->flush_cache();
+		$comedor=$this->db->query('select * from restaurante where cod_comedor='.$cod);
+		return $comedor->result_array();
+
+	}
+	function servicioSpa($tabla){
+
+		$this->db->flush_cache();
+		$servicio=$this->db->query('select * from '.$tabla);
+		return $servicio->result_array();
+
+	}
+	function datosSpa($cod){
+
+		$this->db->flush_cache();
+		$circuito=$this->db->query('select * from spa where cod_tipocir='.$cod);
+		return $circuito->result_array();
+
+	}
+
+	function servicioSerHab($tabla){
+
+		$this->db->flush_cache();
+		$servicio=$this->db->query('select * from '.$tabla);
+		return $servicio->result_array();
+
+	}
+
+	function servicioCoche($tabla){
+
+		$this->db->flush_cache();
+		$servicio=$this->db->query('select id,marca,modelo from '.$tabla.' order by 2');
+		return $servicio->result_array();
+
+	}
+
+	function datosCoche($cod){
+		$this->db->flush_cache();
+		$servicio=$this->db->query('select c.precio,ch.modelo from coche ch join categoria c on c.cod_categoria=ch.cod_categoria where id='.$cod);
+		return $servicio->result_array();
+	}
+
+	function historia(){
+		$this->db->flush_cache();
+		$query = $this->db->get('historia');
+		$query = $query->result_array();
+		return $query;
+	}
+
+
 }
+
 
 ?>

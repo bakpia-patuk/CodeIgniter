@@ -44,7 +44,7 @@ $route['404_override'] = '';
 $route['Inicio'] = "principal";
 $route['El%20Hotel'] = "principal/elHotel";
 $route['Situacion'] = "principal/situacion";
-$route['Agenda%20Bilbao'] = "principal/agenda";
+$route['Agenda%20Dubai'] = "principal/agenda";
 $route['Contacto'] = "principal/contacto";
 $route['Opiniones'] = "principal/opiniones";
 $route['Galeria'] = "principal/galeria";
@@ -53,6 +53,9 @@ $route['Salones'] = "principal/salones";
 $route['Servicios%20comunes'] = "principal/servicios";
 $route['Restaurante'] = "principal/restaurante";
 $route['Install'] = "crearDB/CrearDB/crearDB";
+$route['Disponibilidad'] = "principal/disponibilidad";
+$route['Login'] = "login/login";
+$route['Error'] = "login/error";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
