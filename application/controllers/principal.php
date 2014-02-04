@@ -1,27 +1,20 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Principal extends CI_Controller {
+class Principal extends CI_Controller extends Login {
 	
 	function __construct(){
 		parent:: __construct();
 		$this->load->model('gestordatos_model');
-	}
-	function cabecera(){
-		$arr2 = array('Galeria','Habitaciones','Salones','Servicios comunes','Restaurante');
-		$this->load->library('menu',array('Inicio','El Hotel', $arr2 ,'Situacion','Agenda Dubai','Contacto','Opiniones'));
-		$data['mi_menu'] = $this->menu->construirMenu();
-		$this->load->view('Principal/headers');	
-		$this->load->view('Principal/head');
-		$this->load->view('Principal/menu',$data);
+		$this->load->model('login_model');
 	}
 	function index(){
-		$this->cabecera();	
+		$this->comprobar();	
 		$data['historia']=$this->gestordatos_model->historia();	
 		$this->load->view('Principal/bienvenido',$data);
 		$this->load->view('Principal/footer'); 	
 	}
 	function elHotel(){
-		$this->cabecera();	
+		$this->cabecera();
 		$this->load->view('Principal/elHotel');	
 		$this->load->view('Principal/footer'); 	
 	}
@@ -31,8 +24,9 @@ class Principal extends CI_Controller {
 		$this->load->view('Principal/footer'); 	
 	}
 	function agenda(){
-		$this->cabecera();			
-		$this->load->view('Principal/agenda');	
+		$this->cabecera();
+		$data['tipoEvento'] = $this->gestordatos_model->agenda();
+		$this->load->view('Principal/agenda',$data);	
 		$this->load->view('Principal/footer'); 	
 	}
 	function contacto(){
@@ -87,7 +81,12 @@ class Principal extends CI_Controller {
 	}
 	//Cuales son los distintos servicios
 	function mostrarServicios(){
+
 		$cod_serv = $this->input->post('cod_serv');
+		$cod=array(
+			'cod_servicio'=>$cod_serv
+		);
+		$this->session->set_userdata($cod);
 		$tabla = $this->gestordatos_model->serviciosTabla($cod_serv);
 		
 		switch ($tabla) {
@@ -143,8 +142,12 @@ class Principal extends CI_Controller {
 	}
 
 	function datosPista(){
-		$cod = $this->input->post('cod');
-		$pistaElegida = $this->gestordatos_model->datosPista($cod);
+		$cod_pista = $this->input->post('cod');
+		$cod=array(
+			'cod'=>$cod_pista
+		);
+		$this->session->set_userdata($cod);
+		$pistaElegida = $this->gestordatos_model->datosPista($cod_pista);
 		$html='';
 
 		foreach ($pistaElegida as $pista) {
@@ -183,7 +186,38 @@ class Principal extends CI_Controller {
 		}
 		echo $html;
 	}
+	function horarios(){
+		$fecha2 = $this->input->post('fecha_entrada');
+		//Almacenamos en session la fecha en la que queremos alquilar el servicio
+		$fecha=array(
+			'fecha_servicio'=>$fecha2
+		);
+		$this->session->set_userdata($fecha);
+		$serviciosDisponibles=array('09:00:00','10:00:00','11:00:00','12:00:00','13:00:00','16:00:00','17:00:00','18:00:00','19:00:00','20:00:00');
+		$flag=true;
+		$horarios = $this->gestordatos_model->horarios($fecha2);
+		$html='<select>';
+		
+		for($i=0;$i<count($serviciosDisponibles);$i++){
+			$flag=true;
+			foreach ($horarios as $hora) {
+				if($hora['hora_entrada']<>$serviciosDisponibles[$i]){
+					$flag=false;
+				}
+				else{
+					$flag=true;
+					break;
+				}
+			}
+			if(!$flag){
+				$html.='<option>'.$serviciosDisponibles[$i].'</option>';
+			}
+		}
+
+		$html.='</select>';
+		echo $html;
+
+	}
 
 }
-
 ?>

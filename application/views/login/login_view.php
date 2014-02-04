@@ -1,6 +1,6 @@
 <div id="contenido">
-	<h1>Login</h1>
+	<h1>Login ok</h1>
 	<?php
-		print_r($login);
+		echo "Buenos días ".$login->nombre." ".$login->apellido."!";
 	?>
 </div>

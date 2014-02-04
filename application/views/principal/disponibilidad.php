@@ -86,6 +86,11 @@
 			echo '<td colspan="2" align="center" id="cargarServicio2">';
 			echo '</td>';
 			echo '</tr>';
+			echo '<tr><td colspan="5"><br></td></tr>';
+			echo '<tr>';
+				echo '<td id="dia" align="center"></td><td id="cargarFecha" align="center"></td><td id="cargarHora"></td>';
+				echo '<td></td><td></td>';
+			echo '</tr>';
 			echo '</table>';
 			echo "</center>";
 			echo form_close();

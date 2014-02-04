@@ -54,7 +54,7 @@ $route['Servicios%20comunes'] = "principal/servicios";
 $route['Restaurante'] = "principal/restaurante";
 $route['Install'] = "crearDB/CrearDB/crearDB";
 $route['Disponibilidad'] = "principal/disponibilidad";
-$route['Login'] = "login/login";
+$route['Login'] = "login/login2";
 $route['Error'] = "login/error";
 
 /* End of file routes.php */

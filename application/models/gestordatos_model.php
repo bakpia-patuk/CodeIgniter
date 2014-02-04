@@ -51,7 +51,12 @@ class Gestordatos_model extends CI_Model {
 
 		return $hab_disponibles;
 	}
-
+	function historia(){
+		$this->db->flush_cache();
+		$query = $this->db->get('historia');
+		$query = $query->result_array();
+		return $query;
+	}
 
 	function servicios(){
 
@@ -81,7 +86,13 @@ class Gestordatos_model extends CI_Model {
 
 		$this->db->flush_cache();
 		$pista=$this->db->query('select * from pista where cod_pista='.$cod);
-		return $pista->result_array();
+		if($pista){
+			return $pista->result_array();
+		}
+		else{
+			return false;
+		}
+		
 
 	}
 
@@ -136,11 +147,11 @@ class Gestordatos_model extends CI_Model {
 		return $servicio->result_array();
 	}
 
-	function historia(){
+	function horarios($fecha){
 		$this->db->flush_cache();
-		$query = $this->db->get('historia');
-		$query = $query->result_array();
-		return $query;
+		$hora=$this->db->query('select hora_entrada,hora_salida from alquiler where fecha_entrada="'.$fecha.'" and cod_servicio='.$this->session->userdata('cod_servicio').' and codigo_subservicio='.$this->session->userdata('cod'));
+		return $hora->result_array();
+		
 	}
 
 

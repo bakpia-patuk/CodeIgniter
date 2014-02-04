@@ -15,10 +15,27 @@ class Login_model extends CI_Model {
 		$query = $this->db->get('empleado');
 		if($query->num_rows() == 1)
 		{
-			return $query->row();
+			$query = $query->row();
+			$this->setSession($query->id_empleado,$query->tipo);
+			return $query;
 		}else{
-			$this->session->set_flashdata('usuario_incorrecto','Los datos introducidos son incorrectos');
+			$this->setSession('','');
 			redirect(base_url().'index.php/Error','location');
 		}
 	}
-}  
+	function setSession($id,$tipo){
+		$session=array(
+			'id'=>$id,
+			'tipo'=>$tipo
+		);
+		$this->session->set_userdata($session);
+	}
+	function comprobar(){
+			if($retorna = $this->session->userdata('tipo')){
+			return $retorna;
+		}
+		else{
+			return false;
+		}
+	}
+}
